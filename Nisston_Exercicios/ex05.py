@@ -8,14 +8,17 @@ for c in range(10):
     lista.append(n)
 
 lista_par = []
-contador = 0
+
 for c in range(len(lista)):
     if lista[c] % 2 == 0:
         lista_par.append(lista[c])
-        contador += 1
-
-media_pares = sum(lista_par) / contador
+        
+try:     
+    media_pares = sum(lista_par) / len(lista_par)
+except ZeroDivisionError:
+    media_pares = "Não foram gerados números pares."
 
 print(f'Lista completa: {lista}\n'
       f'Lista dos Pares: {lista_par}\n'
       f'Média dos números pares: {media_pares}')
+
